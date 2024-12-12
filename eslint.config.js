@@ -1,5 +1,6 @@
 import typescriptParser from "@typescript-eslint/parser";
 import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
+import importPlugin from "eslint-plugin-import";
 
 export default [
   {
@@ -7,16 +8,18 @@ export default [
     files: ["**/*.{js,ts}"],
     languageOptions: {
       ecmaVersion: "latest",
-      parser: typescriptParser, // Use the imported parser object
+      parser: typescriptParser,
     },
     plugins: {
-      "@typescript-eslint": typescriptEslintPlugin
+      "@typescript-eslint": typescriptEslintPlugin,
+      "import": importPlugin
     },
     rules: {
       "no-unused-vars": "warn",
       "no-console": "off",
       "@typescript-eslint/no-use-before-define": "off",
-      "@typescript-eslint/no-empty-function": "warn"
+      "@typescript-eslint/no-empty-function": "warn",
+      "import/no-unused-modules": "off" // Disable or configure as needed
     },
   },
 ];
