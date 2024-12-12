@@ -1,6 +1,6 @@
 export default [
   {
-    ignores: ["vendor/**", "node_modules/**", "any_other_third_party_directories/**"],
+    ignores: ["vendor/**", "node_modules/**"],
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
